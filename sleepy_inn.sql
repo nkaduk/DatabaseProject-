@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sleepy inn`
+-- Database: `sleepy_inn`
 --
 
 -- --------------------------------------------------------
@@ -35,6 +35,11 @@ CREATE TABLE `booking information` (
   `Checked-In` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `booking information` (`Hotel-Room ID`, `Account_ID`, `Hotel ID`, `Date Booked`,`Checked-In`) VALUES
+('13-001', '88a', '001', '07/10/23', 'N'),
+('16-001', '167y', '001', '08/11/20', 'Y');
+
+
 -- --------------------------------------------------------
 
 --
@@ -45,9 +50,16 @@ CREATE TABLE `customer` (
   `Account_ID` varchar(30) NOT NULL,
   `First Name` varchar(30) NOT NULL,
   `Last Name` varchar(30) NOT NULL,
-  `Middle Initial(s)` varchar(10) NOT NULL,
   `Membership Type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `customer` (`Account_ID`, `First Name`, `Last Name`, 'Membership Type') VALUES
+('298762', 'Lilly', 'Peterson', 'None'),
+('3124', 'Mark', 'Hessner', 'None'),
+('8723', 'Bobby', 'Randal', 'Gold'),
+('88a', 'Gwen', 'Sau', 'Standard'),
+('167y', 'Opera', 'Reinfield', 'Gold'),
+('134', 'Johnathan', 'Lovelace', 'Platnium');
 
 -- --------------------------------------------------------
 
