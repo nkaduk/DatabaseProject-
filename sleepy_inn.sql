@@ -53,7 +53,7 @@ CREATE TABLE `customer` (
   `Membership Type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `customer` (`Account_ID`, `First Name`, `Last Name`, 'Membership Type') VALUES
+INSERT INTO `customer` (`Account_ID`, `First Name`, `Last Name`, `Membership Type`) VALUES
 ('298762', 'Lilly', 'Peterson', 'None'),
 ('3124', 'Mark', 'Hessner', 'None'),
 ('8723', 'Bobby', 'Randal', 'Gold'),
