@@ -48,16 +48,12 @@ INSERT INTO `booking_information` (`Hotel_Room_ID`, `Account_ID`, `Hotel_ID`, `D
 
 CREATE TABLE `customer` (
   `Account_ID` varchar(30) NOT NULL,
-  `First Name` varchar(30) NOT NULL,
-  `Last Name` varchar(30) NOT NULL,
-  `Membership Type` varchar(10) NOT NULL
+  `First_Name` varchar(30) NOT NULL,
+  `Last_Name` varchar(30) NOT NULL,
+  `Membership_Type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-<<<<<<< HEAD
 INSERT INTO `customer` (`Account_ID`, `First_Name`, `Last_Name`, `Membership_Type`) VALUES
-=======
-INSERT INTO `customer` (`Account_ID`, `First Name`, `Last Name`, `Membership Type`) VALUES
->>>>>>> 9e7ab8d499fd7a0384ea5c64405bee7e1947bbd0
 ('298762', 'Lilly', 'Peterson', 'None'),
 ('3124', 'Mark', 'Hessner', 'None'),
 ('8723', 'Bobby', 'Randal', 'Gold'),
@@ -220,7 +216,7 @@ CREATE TABLE `managers` (
   `SSN` varchar(30) NOT NULL,
   `First_Name` varchar(30) NOT NULL,
   `Last_Name` varchar(30) NOT NULL,
-  `Middle Initial(s)` varchar(10) NOT NULL,
+  `Middle_Initial(s)` varchar(10) NOT NULL,
   `Hotel_ID` int(11) NOT NULL,
   `Days_Worked` varchar(30) NOT NULL,
   `Time_Worked` varchar(50) NOT NULL
