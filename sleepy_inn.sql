@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2022 at 11:16 PM
+-- Generation Time: Apr 27, 2022 at 09:05 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,21 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `booking information`
+-- Table structure for table `booking_information`
 --
 
 CREATE TABLE `booking_information` (
-  `Hotel_Room_ID` int(11) NOT NULL,
+  `Hotel_Room_ID` varchar(30) NOT NULL,
   `Account_ID` varchar(30) NOT NULL,
   `Hotel_ID` int(11) NOT NULL,
   `Date_Booked` date NOT NULL,
   `Checked_In` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `booking_information` (`Hotel_Room_ID`, `Account_ID`, `Hotel_ID`, `Date_Booked`,`Checked_In`) VALUES
-('13-001', '88a', '001', '07/10/23', 'N'),
-('16-001', '167y', '001', '08/11/20', 'Y');
+--
+-- Dumping data for table `booking_information`
+--
 
+INSERT INTO `booking_information` (`Hotel_Room_ID`, `Account_ID`, `Hotel_ID`, `Date_Booked`, `Checked_In`) VALUES
+('13-1001', '88a', 1001, '2007-10-23', 'N'),
+('16-1001', '167y', 1001, '2008-11-20', 'Y'),
+('15-1001', '76db', 1001, '2023-06-07', 'N'),
+('14-1001', '76db', 1001, '2024-05-04', 'N');
 
 -- --------------------------------------------------------
 
@@ -53,22 +58,22 @@ CREATE TABLE `customer` (
   `Membership_Type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `customer`
+--
+
 INSERT INTO `customer` (`Account_ID`, `First_Name`, `Last_Name`, `Membership_Type`) VALUES
+('134', 'Johnathan', 'Lovelace', 'Platnium'),
+('167y', 'Opera', 'Reinfield', 'Gold'),
 ('298762', 'Lilly', 'Peterson', 'None'),
 ('3124', 'Mark', 'Hessner', 'None'),
 ('8723', 'Bobby', 'Randal', 'Gold'),
-('88a', 'Gwen', 'Sau', 'Standard'),
-('167y', 'Opera', 'Reinfield', 'Gold'),
-('134', 'Johnathan', 'Lovelace', 'Platnium');
-
--- --------------------------------------------------------
-
-
+('88a', 'Gwen', 'Sau', 'Standard');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employee information`
+-- Table structure for table `employee_information`
 --
 
 CREATE TABLE `employee_information` (
@@ -82,7 +87,7 @@ CREATE TABLE `employee_information` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `employee information`
+-- Dumping data for table `employee_information`
 --
 
 INSERT INTO `employee_information` (`SSN`, `Hours_Worked`, `Days_Worked`, `Hotel_ID`, `Position_Type`, `Salary`, `Total_Months_Worked`) VALUES
@@ -96,7 +101,7 @@ INSERT INTO `employee_information` (`SSN`, `Hours_Worked`, `Days_Worked`, `Hotel
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employee name`
+-- Table structure for table `employee_name`
 --
 
 CREATE TABLE `employee_name` (
@@ -107,7 +112,7 @@ CREATE TABLE `employee_name` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `employee name`
+-- Dumping data for table `employee_name`
 --
 
 INSERT INTO `employee_name` (`SSN`, `First_Name`, `Last_Name`, `Middle_Initial(s)`) VALUES
@@ -121,20 +126,7 @@ INSERT INTO `employee_name` (`SSN`, `First_Name`, `Last_Name`, `Middle_Initial(s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game room`
---
-
-CREATE TABLE `game_room` (
-  `Hotel_ID` int(11) NOT NULL,
-  `Open Time` varchar(10) NOT NULL,
-  `Closing Time` varchar(10) NOT NULL,
-  `Age Limit` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `hotel amenities`
+-- Table structure for table `hotel_amenities`
 --
 
 CREATE TABLE `hotel_amenities` (
@@ -151,7 +143,7 @@ CREATE TABLE `hotel_amenities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hotel amenities`
+-- Dumping data for table `hotel_amenities`
 --
 
 INSERT INTO `hotel_amenities` (`Hotel_ID`, `Pool`, `Workout_Room`, `Game_Room`, `Allows_Pets`, `WiFi`, `AC`, `Heating`, `Complimentary_Breakfast`, `Check_Out_Time`) VALUES
@@ -162,7 +154,7 @@ INSERT INTO `hotel_amenities` (`Hotel_ID`, `Pool`, `Workout_Room`, `Game_Room`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotel information`
+-- Table structure for table `hotel_information`
 --
 
 CREATE TABLE `hotel_information` (
@@ -175,7 +167,7 @@ CREATE TABLE `hotel_information` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hotel information`
+-- Dumping data for table `hotel_information`
 --
 
 INSERT INTO `hotel_information` (`Hotel_ID`, `Name`, `Total_Rooms`, `Vacant_Rooms`, `Number_of_Employees`, `Maintenace_Cost`) VALUES
@@ -186,7 +178,7 @@ INSERT INTO `hotel_information` (`Hotel_ID`, `Name`, `Total_Rooms`, `Vacant_Room
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotel location`
+-- Table structure for table `hotel_location`
 --
 
 CREATE TABLE `hotel_location` (
@@ -198,7 +190,7 @@ CREATE TABLE `hotel_location` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `hotel location`
+-- Dumping data for table `hotel_location`
 --
 
 INSERT INTO `hotel_location` (`Name`, `City`, `State`, `Street`, `Zip`) VALUES
@@ -209,86 +201,11 @@ INSERT INTO `hotel_location` (`Name`, `City`, `State`, `Street`, `Zip`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `managers`
---
-
-CREATE TABLE `managers` (
-  `SSN` varchar(30) NOT NULL,
-  `First_Name` varchar(30) NOT NULL,
-  `Last_Name` varchar(30) NOT NULL,
-  `Middle_Initial(s)` varchar(10) NOT NULL,
-  `Hotel_ID` int(11) NOT NULL,
-  `Days_Worked` varchar(30) NOT NULL,
-  `Time_Worked` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `managers`
---
-
-INSERT INTO `managers` (`SSN`, `First_Name`, `Last_Name`, `Middle_Initial(s)`, `Hotel_ID`, `Days_Worked`, `Time_Worked`) VALUES
-('878-94-3675', 'Donna', 'Everdeen', 'PH', 1001, 'All Days', '6:30 pm - 12:00 am');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pool`
---
-
-CREATE TABLE `pool` (
-  `Hotel_ID` int(11) NOT NULL,
-  `Open_Time` varchar(10) NOT NULL,
-  `Closing_Time` varchar(10) NOT NULL,
-  `Age_Limit` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `room availability`
---
-
-CREATE TABLE `room_availability` (
-  `Room_Hotel_ID` varchar(30) NOT NULL,
-  `Room_Type` varchar(30) NOT NULL,
-  `Availability` varchar(30) NOT NULL,
-  `Room_Number` int(11) NOT NULL,
-  `Num_of_Beds` int(11) NOT NULL,
-  `Extra_Amenities` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `room availability`
---
-
-INSERT INTO `room_availability` (`Room_Hotel_ID`, `Room_Type`, `Availability`, `Room_Number`, `Num_of_Beds`, `Extra_Amenities`) VALUES
-('1-1001', 'Single', 'Available ', 1, 1, ''),
-('1-1002', 'Single', 'Available ', 1, 1, ''),
-('10-1001', 'Deluxe Single', 'Available ', 10, 1, ''),
-('11-1001', 'Double', 'Available ', 11, 2, ''),
-('12-1001', 'Double', 'Available ', 12, 2, ''),
-('13-1001', 'Double', 'Occupied', 13, 2, ''),
-('14-1001', 'Double', 'Available ', 14, 2, ''),
-('15-1001', 'Double', 'Available ', 15, 2, ''),
-('16-1001', 'Deluxe Double', 'Occupied', 16, 2, ''),
-('17-1001', 'Deluxe Double', 'Available ', 17, 2, ''),
-('2-1001', 'Single', 'Available ', 2, 1, ''),
-('3-1001', 'Single', 'Occupied', 3, 1, ''),
-('4-1001', 'Single', 'Available ', 4, 1, ''),
-('5-1001', 'Single', 'Available ', 5, 1, ''),
-('6-1001', 'Single', 'Available ', 6, 1, ''),
-('7-1001', 'Single', 'Available ', 7, 1, ''),
-('8-1001', 'Single', 'Available ', 8, 1, ''),
-('9-1001', 'Deluxe Single', 'Available ', 9, 1, '');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `rooms`
 --
 
 CREATE TABLE `rooms` (
-  `Room_Hotel_ID` varchar(30) NOT NULL,
+  `hotel_room_ID` varchar(30) NOT NULL,
   `Room_number` int(11) NOT NULL,
   `Hotel_ID` int(11) NOT NULL,
   `Booked` char(1) NOT NULL,
@@ -299,7 +216,7 @@ CREATE TABLE `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`Room_Hotel_ID`, `Room_number`, `Hotel_ID`, `Booked`, `Clean`) VALUES
+INSERT INTO `rooms` (`hotel_room_ID`, `Room_number`, `Hotel_ID`, `Booked`, `Clean`) VALUES
 ('1-1001', 1, 1001, 'N', 'Y'),
 ('1-1002', 1, 1002, 'N', 'Y'),
 ('10-1001', 10, 1001, 'N', 'Y'),
@@ -322,15 +239,41 @@ INSERT INTO `rooms` (`Room_Hotel_ID`, `Room_number`, `Hotel_ID`, `Booked`, `Clea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `workout room`
+-- Table structure for table `room_availability`
 --
 
-CREATE TABLE `workout_room` (
-  `Hotel_ID` int(11) NOT NULL,
-  `Open_Time` varchar(10) NOT NULL,
-  `Closing` varchar(10) NOT NULL,
-  `Age_Limit` int(11) NOT NULL
+CREATE TABLE `room_availability` (
+  `hotel_room_ID` varchar(30) NOT NULL,
+  `Room_Type` varchar(30) NOT NULL,
+  `Availability` varchar(30) NOT NULL,
+  `Room_Number` int(11) NOT NULL,
+  `Num_of_Beds` int(11) NOT NULL,
+  `Extra_Amenities` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `room_availability`
+--
+
+INSERT INTO `room_availability` (`hotel_room_ID`, `Room_Type`, `Availability`, `Room_Number`, `Num_of_Beds`, `Extra_Amenities`) VALUES
+('1-1001', 'Single', 'Available ', 1, 1, ''),
+('1-1002', 'Single', 'Available ', 1, 1, ''),
+('10-1001', 'Deluxe Single', 'Available ', 10, 1, ''),
+('11-1001', 'Double', 'Available ', 11, 2, ''),
+('12-1001', 'Double', 'Available ', 12, 2, ''),
+('13-1001', 'Double', 'Occupied', 13, 2, ''),
+('14-1001', 'Double', 'Occupied', 14, 2, ''),
+('15-1001', 'Double', 'Available ', 15, 2, ''),
+('16-1001', 'Deluxe Double', 'Occupied', 16, 2, ''),
+('17-1001', 'Deluxe Double', 'Available ', 17, 2, ''),
+('2-1001', 'Single', 'Available ', 2, 1, ''),
+('3-1001', 'Single', 'Occupied', 3, 1, ''),
+('4-1001', 'Single', 'Available ', 4, 1, ''),
+('5-1001', 'Single', 'Available ', 5, 1, ''),
+('6-1001', 'Single', 'Available ', 6, 1, ''),
+('7-1001', 'Single', 'Available ', 7, 1, ''),
+('8-1001', 'Single', 'Available ', 8, 1, ''),
+('9-1001', 'Deluxe Single', 'Available ', 9, 1, '');
 
 --
 -- Indexes for dumped tables
@@ -343,43 +286,34 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`Account_ID`);
 
 --
--- Indexes for table `customer contact and billing`
---
---
--- Indexes for table `employee information`
+-- Indexes for table `employee_information`
 --
 ALTER TABLE `employee_information`
   ADD PRIMARY KEY (`SSN`);
 
 --
--- Indexes for table `hotel amenities`
+-- Indexes for table `hotel_amenities`
 --
 ALTER TABLE `hotel_amenities`
   ADD PRIMARY KEY (`Hotel_ID`);
 
 --
--- Indexes for table `hotel location`
+-- Indexes for table `hotel_location`
 --
 ALTER TABLE `hotel_location`
   ADD PRIMARY KEY (`Name`);
 
 --
--- Indexes for table `managers`
---
-ALTER TABLE `managers`
-  ADD PRIMARY KEY (`SSN`);
-
---
--- Indexes for table `room availability`
---
-ALTER TABLE `room_availability`
-  ADD PRIMARY KEY (`Room_Hotel_ID`);
-
---
 -- Indexes for table `rooms`
 --
 ALTER TABLE `rooms`
-  ADD PRIMARY KEY (`Room_Hotel_ID`);
+  ADD PRIMARY KEY (`hotel_room_ID`);
+
+--
+-- Indexes for table `room_availability`
+--
+ALTER TABLE `room_availability`
+  ADD PRIMARY KEY (`hotel_room_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
