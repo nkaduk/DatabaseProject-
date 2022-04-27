@@ -3,14 +3,21 @@
 <body>
 
     <p> Please input you information to book a room</p>
-<form action="welcome_get.php" method="get">
+<form name ="Book" action="insert.php" method="get">
 
-Account_ID: <input type="text" name="Account_ID"><br>
-Hotel_Room_ID: <input type="text" name="HRID"><br>
-Hotel_ID: <input type="text" name="Hotel_ID"><br>
-Date_To_Book: <input type="text" name="Date_Booked"><br>
+<label for "account">Account_ID: </label>
+<input type="text" name="Account_ID" id = "Account_ID"><br>
 
-<input type="Book a Room!">
+<label for "HRID">Hotel_Room_ID: </label>
+<input type="text" name="HRID" id ="HRID"><br>
+
+<label for "Hotel_ID">Hotel_ID: </label>
+<input type="text" name="Hotel_ID" id = "Hotel_ID"><br>
+
+<label for "DTB">Date_To_Book: </label>
+<input type="text" name="Date_Booked" id = "Date_Booked"><br>
+
+<input type="submit">
 </form>
 
 <h2>Hotel IDs:</h2><br>
