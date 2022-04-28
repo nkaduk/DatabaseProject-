@@ -68,7 +68,38 @@
               
         </div>
       </div>
+  </div>
 
+  <div class="container py-4">
+    <div class="row align-items-md-stretch">
+      <div class="col-md">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+
+        <fieldset>
+          <legend><h2> Please input you information to book a room</h2></legend>
+      <form name ="Book" action="insert.php" method="post">
+      
+      <label for= "account">Account_ID: </label>
+      <input type="text" name="Account_ID" id = "Account_ID"><br>
+      
+      <label for ="HRID">Hotel_Room_ID: </label>
+      <input type="text" name="HRID" id ="HRID"><br>
+      
+      <label for ="Hotel_ID">Hotel_ID: </label>
+      <input type="text" name="Hotel_ID" id = "Hotel_ID"><br>
+      
+      <label for ="DTB">Date_To_Book: </label>
+      <input type="text" name="Date_Booked" id = "Date_Booked"><br>
+      
+      <input type="submit">
+      </form>
+      </fieldset>
+      </div>
+      </div>
+     </div> 
+  </div>   
+
+  <div class="container py-4">
       <div class="p-1 mb- bg-light rounded-3">
         <div class="container-fluid py-1">
             <img class='img-fluid w-75 mx-auto d-block' src="images/booking_img.jpg" alt="" />
