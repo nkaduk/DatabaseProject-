@@ -21,7 +21,7 @@
     END;";*/
     
     
-    $sql = "update `Room_Availability` set Availability = 'Occupied' where Hotel_Room_ID = '$Hotel_Room_ID'";
+    $sql = "update `Room_Availability` set Availability = 'Occupied' where Room_Hotel_ID = '$Hotel_Room_ID'";
     $conn ->query($sql);
 
 
