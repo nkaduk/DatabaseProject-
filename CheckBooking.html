@@ -3,6 +3,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <title> Check Booking </title>
 <style>
     .center {
@@ -15,6 +16,7 @@
     
     </head>
 <body>
+
     <div class="container py-4">
         <header class="mb-auto">
           <div>
@@ -27,85 +29,48 @@
             </nav>
           </div>
         </header>
-      </div>  
+      </div>    
 
 
-<main>
-    <div class="container py-4">
-        <div class="row align-items-md-stretch">
-            <div class="col-md">
-                <div class="h-100 p-5 text-white bg-dark rounded-3">
-
-
-                    <h2> <center>Check Booking </center></h2> <br>
-                    <img src = "images/bookingCheck_img2.jpg" alt = "luxury-hotel.jpg" width = "600" height = "400" class = "center">
-                        
-                        
-                        <p> <center>We are so glad that you choose to book with us! </center></p> <br>
-                        <p> <center>You can check your booking by inputting your account information below </center></p> <br>
-                        
-                    <form name="userInput" method="post" action="checkBooking.php">
-                        <label for = "account"> Please enter your Account ID: </label>
-                            <input type="text" name="Account_ID" id="Account_ID"> 
-
-                        
-                        
-                        </form> 
-                </div>        
-            </div>
-        </div> 
-    </div>   
-    <div class="container py-4">  
-        <div class="row align-items-md-stretch">
-            <div class="col-md">
-                <div class="h-100 p-5 text-white bg-dark rounded-3">  
-                        <h2><center>Leaving us so soon?</center></h2>
-                        <br>
-                        <img src = "images/bookingCheck_img.jpg" alt = "luxHotel" width = "600" height = "400" class="center">
-                        <br>
-                        
-                        <fieldset>
-                            
-                            
-                            <br>
-                            
-                        <form name = "DeleteUserInput" method = "post" action = "deletebooking.php">
-                        <h2> <center>Want to unbook a room?  Input your information below </center></h2> <br>
-                        <p> <center>Who is it that wants to delete? </center></p> <br>
-                       
-                        <label for = "account"> Please enter your Account ID: </label>
-                        <input type="text" name="Account_ID" id="Account_ID"> <br>
-                        
-                        <p> <center>What room would you like to delete? </center></p> <br>
-                        <label for = "delete"> Select your Room ID: </label>
-                    <input for ="text" name = "Room_ID" id="Room_ID">
-                            
-                        <input type="submit" name="Submit" id="Submit" value="Submit">
-                        </form>
-                        </fieldset>
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-    </div>
-</main>
-
-
+    <h2> <center>Check Booking </center></h2> <br>
+<img src = "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/upwk61852603-wikimedia-image.jpg?w=1200&h=1200&dpr=1&fit=clip&crop=default&fm=jpg&q=75&vib=3&con=3&usm=15&cs=srgb&bg=F4F4F3&ixlib=js-2.2.1&s=1356f6b667baa3a66f7beed242fca46d" alt = "luxury-hotel.jpg" width = "600" height = "400" class = "center">
+    
+    
+    <p> <center>We are so glad that you choose to book with us! </center></p> <br>
+    <p> <center>You can check your booking by inputting your account information below </center></p> <br>
+    
+<form name="userInput" method="post" action="checkBooking.php">
+    <label for = "account"> Please enter your Account ID: </label>
+        <input type="text" name="Account_ID" id="Account_ID"> 
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+    </form> 
+    
+    <img src = "https://www.publicdomainpictures.net/pictures/110000/nahled/luxury-hotel-1417786865rIm.jpg" alt = "luxHotel" width = "1300" height = "750">
+    
+    <fieldset>
+        <legend> Leaving us so soon? </legend>
+        
+    <form name = "DeleteUserInput" method = "post" action = "deletebooking.php">
+    <h2> <center>Want to unbook a room?  Input your information below </center></h2> <br>
+    <p> <center>Who is it that wants to delete? </center></p> <br>
+   
+    <label for = "account"> Please enter your Account ID: </label>
+    <input type="text" name="Account_ID" id="Account_ID"> <br>
+    
+    <p> <center>What room would you like to delete? </center></p> <br>
+    <label for = "delete"> Select your Room ID: </label>
+<input for ="text" name = "Room_ID" id="Room_ID">
+        
+    <input type="submit" name="Submit" id="Submit" value="Submit">
+    </form>
+    </fieldset>
 <!--
     <p> Want to cancel a booking? </p>
 <button onclick = "document.location ='https://tutorial.math.lamar.edu/classes/calcII/ConvergenceOfSeries.aspx'"> Click here to cancel</button>
